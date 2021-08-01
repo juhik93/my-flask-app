@@ -4,11 +4,11 @@ RUN apt-get update -y && \
 
 WORKDIR /app
 
-COPY /basic-flask-app/requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt && \
+    pip install Flask
 
-COPY /basic-flask-app/. .
+COPY . .
 
-ENTRYPOINT [ "python" ]
+CMD [ "python", "routes.py", "--host=0.0.0.0"]
 
-CMD [ "routes.py" ]
