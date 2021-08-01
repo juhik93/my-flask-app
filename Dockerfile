@@ -10,5 +10,7 @@ RUN pip install -r requirements.txt && \
 
 COPY . .
 
-CMD [ "python", "routes.py", "--host=0.0.0.0"]
+ENTRYPOINT [ "python" ]
+
+CMD ["routes.py" ]
 
