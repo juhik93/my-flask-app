@@ -10,7 +10,6 @@ RUN pip install -r requirements.txt && \
 
 COPY . .
 
-ENTRYPOINT [ "python" ]
+EXPOSE 5000
 
-CMD ["routes.py" ]
-
+ENTRYPOINT [ "python", "routes.py" ]
